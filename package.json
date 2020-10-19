@@ -53,7 +53,7 @@
     "format": "prettier-standard '**/*.js'",
     "deploy": "pm2 deploy production",
     "start": "node .",
-    "logs": "pm2 deploy production exec \"pm2 logs tesco-alerts\"",
-    "restart": "pm2 deploy production exec \"pm2 restart tesco-alerts\""
+    "logs": "pm2 deploy production exec \"pm2 logs fileview-sync\"",
+    "restart": "pm2 deploy production exec \"pm2 restart fileview-sync\""
   }
 }
