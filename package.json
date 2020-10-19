@@ -1,0 +1,59 @@
+{
+  "name": "fileview-sync",
+  "version": "1.0.0",
+  "description": "Fileview is the devil",
+  "main": "app/index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/oliverwoodings/fileview-sync.git"
+  },
+  "author": "Oliver Woodings",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/oliverwoodings/fileview-sync/issues"
+  },
+  "homepage": "https://github.com/oliverwoodings/fileview-sync#readme",
+  "devDependencies": {
+    "husky": "^1.3.1",
+    "lint-staged": "^10.1.1",
+    "nodemon": "^2.0.2",
+    "pm2": "^4.2.3",
+    "prettier-standard": "^16.2.1"
+  },
+  "dependencies": {
+    "@sentry/node": "^5.15.4",
+    "axios": "^0.20.0",
+    "config": "^3.3.1",
+    "cron": "^1.8.2",
+    "driftwood": "^1.5.5",
+    "fs-extra": "^9.0.0",
+    "googleapis": "^61.0.0",
+    "into-stream": "^6.0.0",
+    "js-yaml": "^3.13.1",
+    "p-timeout": "^3.2.0",
+    "pdf-puppeteer": "^1.1.10",
+    "puppeteer": "^2.1.1",
+    "qs": "^6.9.4",
+    "twilio": "^3.42.0",
+    "xml2json": "^0.12.0"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged",
+      "post-commit": "git update-index --again"
+    }
+  },
+  "lint-staged": {
+    "*.js": [
+      "prettier-standard",
+      "git add"
+    ]
+  },
+  "scripts": {
+    "format": "prettier-standard '**/*.js'",
+    "deploy": "pm2 deploy production",
+    "start": "node .",
+    "logs": "pm2 deploy production exec \"pm2 logs tesco-alerts\"",
+    "restart": "pm2 deploy production exec \"pm2 restart tesco-alerts\""
+  }
+}

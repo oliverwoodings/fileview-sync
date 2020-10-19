@@ -1,0 +1,27 @@
+fileview:
+  username: foo
+  password: bar
+
+phoneNumber: "+44772943029"
+
+puppeteer:
+  options:
+    headless: true
+  closeOnError: true
+  timeout: 30000
+
+twilio:
+  accountSid: AC479050186f2a17f5874a17cdd57f2f03
+  authToken: bar
+  from: "+441173253659"
+
+sentry:
+  enabled: false
+  dsn: foo
+
+schedule: "*/5 * * * *"
+
+runOnStart: false
+
+drive:
+  folderId: 1fA-hzbr2HGKbyGYt-7MAgZsU7YryLyDg

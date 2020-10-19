@@ -1,0 +1,21 @@
+{
+  "apps": [
+    {
+      "name": "fileview-sync",
+      "script": "npm run start",
+      "env_production": {
+        "NODE_ENV": "production"
+      }
+    }
+  ],
+  "deploy": {
+    "production": {
+      "user": "root",
+      "host": "danniandoli.wedding",
+      "ref": "origin/master",
+      "repo": "git@github.com:oliverwoodings/fileview-sync.git",
+      "path": "/root/apps/fileview-sync",
+      "post-deploy": "nvm use && npm i --production && npx pm2 startOrRestart ecosystem.json --env production"
+    }
+  }
+}
