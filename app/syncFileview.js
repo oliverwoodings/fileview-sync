@@ -34,7 +34,6 @@ module.exports = async function syncFileview () {
       `${documents.length} new document(s) are available in fileview`
     )
   }
-  process.exit(0)
 }
 
 async function getSince () {
