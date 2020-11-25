@@ -16,7 +16,8 @@ const MIME_TYPES = {
   'acrobat-pdf': 'application/pdf',
   'image-bmp': 'image/bmp',
   'other-zip': 'application/zip',
-  'word-doc': 'application/msword'
+  'word-doc': 'application/msword',
+  'word-docx': 'application/vnd.openxmlformats-officedocument.wordprocessing'
 }
 
 module.exports = async function syncFileview () {
