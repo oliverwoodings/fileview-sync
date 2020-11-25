@@ -17,7 +17,8 @@ const MIME_TYPES = {
   'image-bmp': 'image/bmp',
   'other-zip': 'application/zip',
   'word-doc': 'application/msword',
-  'word-docx': 'application/vnd.openxmlformats-officedocument.wordprocessing'
+  'word-docx':
+    'application/vnd.openxmlformats-officedocument.wordprocessingml.document'
 }
 
 module.exports = async function syncFileview () {
