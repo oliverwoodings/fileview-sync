@@ -7,7 +7,15 @@ const syncFileview = require('./syncFileview')
 log.info(`Running on schedule: ${config.schedule}`)
 new CronJob(config.schedule, run, null, true, null, null, config.runOnStart)
 
+let locked = false
+
 async function run () {
+  if (locked) {
+    log.warn('Another run is still in progress, skipping')
+    return
+  }
+
+  locked = true
   try {
     log.info('Syncing fileview')
     await syncFileview()
@@ -15,4 +23,5 @@ async function run () {
     sentry.captureException(e)
     log.error(e)
   }
+  locked = false
 }
